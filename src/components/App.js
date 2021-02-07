@@ -25,7 +25,7 @@ const App = ()=> {
              case 37:
                     setPosi({
                         left:ballPosition.left-5,
-                        top:ballPosition.top
+                        top:ballPosition.top,
                     });
                     break;
              case 40:
@@ -46,13 +46,15 @@ const App = ()=> {
      })
 },[])
     const renderBallOrButton = () => {
-		if (this.state.renderBall) {
-		    return <div className="ball" style={{
+		if (renderBall) {
+		    return <div className="ball" 
+            style={{
                 left:ballPosition.left + "px",
                 top:ballPosition.top +"px",
+                position:"absolute",
             }}></div>
 		} else {
-		    return <button onClick={this.buttonClickHandler} >Click For One Ball</button>
+		    return <button onClick={buttonClickHandler} >Click For One Ball</button>
 		}
     }
 
@@ -62,7 +64,7 @@ const App = ()=> {
    
         return (
             <div className="playground">
-                {this.renderBallOrButton()}
+                {renderBallOrButton()}
             </div>
         )
     
