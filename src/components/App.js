@@ -37,7 +37,7 @@ const App = ()=> {
             default:
                 setPosi({
                     left:ballPosition.left,
-                    top:ballPosition.top;
+                    top:ballPosition.top,
                 });
                 break;           
 
