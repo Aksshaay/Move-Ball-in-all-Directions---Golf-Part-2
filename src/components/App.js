@@ -10,32 +10,35 @@ const App = ()=> {
    }
    useEffect(()=>{
      document.addEventListener("keydown",(event)=>{
+         //console.log(event.keyCode);
          switch(event.keyCode){
              case 39:
-                 setPosi({
+                 setBallPosition({
                      left:ballPosition.left + 5,
                      top:ballPosition.top,
                  });
+                 break;
              case 38:
-                 setPosi({
+                 setBallPosition({
                      left:ballPosition.left,
                      top:ballPosition.top-5,
+                     //position:"absolute",
                  });
                  break;
              case 37:
-                    setPosi({
+                    setBallPosition({
                         left:ballPosition.left-5,
                         top:ballPosition.top,
                     });
                     break;
              case 40:
-                 setPosi({
+                 setBallPosition({
                      left:ballPosition.left,
                      top:ballPosition.top+5,
                  });
                  break;
             default:
-                setPosi({
+                setBallPosition({
                     left:ballPosition.left,
                     top:ballPosition.top,
                 });
@@ -44,7 +47,7 @@ const App = ()=> {
 
          }
      })
-},[])
+},[ballPosition]);
     const renderBallOrButton = () => {
 		if (renderBall) {
 		    return <div className="ball" 
